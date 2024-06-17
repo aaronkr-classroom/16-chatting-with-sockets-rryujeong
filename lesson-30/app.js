@@ -100,7 +100,7 @@ const mongoose = require("mongoose"); // mongoose를 요청
 
 // 데이터베이스 연결 설정
 mongoose.connect(
-  "mongodb+srv://wjdgks815:kAaHXK4G52DSfDIn@ut-node.psdbufj.mongodb.net/?retryWrites=true&w=majority&appName=UT-Node/ut-node", // 데이터베이스 연결 설정 Atlas 경로 (lesson-15)
+ "mongodb+srv://wjdgks815:kAaHXK4G52DSfDIn@ut-node.psdbufj.mongodb.net/?retryWrites=true&w=majority&appName=UT-Node/ut-node", // 데이터베이스 연결 설정 Atlas 경로 (lesson-15)
 );
 
 const db = mongoose.connection;
@@ -168,8 +168,8 @@ app.use("/", router); // 라우터를 애플리케이션에 추가
  * app.js에서 서버 io 객체 추가
  */
 const server = app.listen(app.get("port"), () => {
-    // 3000번 포트로 리스닝 설정
-    console.log(`Server running at http://localhost:${app.get("port")}`);
-  }),
-  io = require("socket.io")(server); // socket.io를 사용하기 위한 서버 객체 설정
-require("./controllers/chatController")(io); // 채팅 컨트롤러를 요청하고 서버 객체를 전달
+  // 3000번 포트로 리스닝 설정
+  console.log(`Server running at http://localhost:${app.get("port")}`);
+});
+const io = require("socket.io")(server); // Lesson 30 - socket.io를 사용하기 위한 서버 객체 설정
+require("./controllers/chatController")(io); // Lesson 30 - 채팅 컨트롤러를 요청하고 서버 객체를 전달
